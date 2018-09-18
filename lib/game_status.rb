@@ -49,6 +49,7 @@ WIN_COMBINATIONS = [
      return true
    end
  end
+<<<<<<< HEAD
 
 def winner(board)
   x = won?(board)
@@ -56,6 +57,30 @@ def winner(board)
      return nil
 else 
   board[won?(board)[0]]
+=======
+ 
+ def turn_count(board)
+  x = 0
+  board.each do |space|
+    if space == "X"
+      x += 1 
+    elsif space == "O"
+      x += 1
+    end
+  end
+  return x
+end
+
+def winner(board)
+  x = turn_count(board)
+  y = x % 2
+ if won?(board) == false
+     return nil
+elsif y == 0 
+    return "O"
+  elsif y == 1 
+    return "X"
+>>>>>>> 13ec35113f2b1822d0aa3b5485c48f786c4bfed0
   end
 end
   
